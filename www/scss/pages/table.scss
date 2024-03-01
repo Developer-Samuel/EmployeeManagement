@@ -1,0 +1,120 @@
+.employees-content {
+    position: relative;
+    width: 100%;
+
+    .employees {
+        margin: 30px;
+
+        .title {
+            position: relative;
+            padding: 10px 0;
+
+            h1 {
+                position: relative;
+                text-align: center;
+                color: #000;
+                font-size: 36px;
+            }
+        }
+        .actions {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 30px;
+
+            a {
+                margin: 0 30px;
+                padding: 10px 40px;
+                border: 0;
+                border-radius: 12.5px;
+                font-size: 20px;
+                font-weight: 700;
+                color: #fff;
+                text-transform: uppercase;
+                text-decoration: none;
+
+                &#add-link {
+                    background: #007bff;
+                }
+                &#graph-link {
+                    background: #343a40;
+                }
+            }
+        }
+        .table-responsive {
+            position: relative;
+            margin: 50px 30px;
+
+            .dt-layout-row {
+                margin: 20px 0;
+                .dt-paging .dt-paging-button {
+                    border-radius: 7.5px;
+                    border: 2px solid #007bff;
+                    color: #000;
+                    font-weight: 700;
+                    transition: .5s;
+                    
+                    &.current {
+                        background: #007bff;
+                        color: #fff !important;
+                    }
+                    &:not(.current) {
+                        &:hover {
+                            background: #eee !important;
+                            color: #000 !important;
+                        }
+                    }
+                }
+            }
+            table {
+                position: relative;
+                justify-content: center;
+                border: 1px solid #bbb;
+                border-bottom: 0; 
+
+                thead 
+                {
+                    background: #000;
+                    color: #fff;
+
+                    th {
+                        border-bottom: 1px solid #bbb;   
+                        padding: 15px;
+                    }
+                }
+                tbody {
+                    td {
+                        padding: 20px 15px;
+                        &:nth-child(1) span {
+                            position: relative;
+                            top: -3.5px;
+                        }
+                        a {
+                            padding: 8px 15px 0 15px;
+                            font-size: 15px;
+                            border-radius: 7.5px;
+                            text-decoration: none;
+                            color: #fff;
+
+                            &#edit-link {
+                                margin-right: 7.5px;
+                                background: #007bff;
+                            }
+                            &#delete-link {
+                                background: #dc3545;
+                            }
+
+                            span {
+                                position: relative;
+                                top: -4.5px;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }   
+}

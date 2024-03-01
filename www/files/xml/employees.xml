@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Employees>
+	<Employee><ID>1</ID><FirstName>Jozef</FirstName><LastName>Kováč</LastName><Gender>Male</Gender><Age>19</Age><IdentificationNumber>742356/2534</IdentificationNumber><MonthSalary>1850</MonthSalary><HiredAt>20.2.2024</HiredAt></Employee>
+	<Employee><ID>2</ID><FirstName>Alžbeta</FirstName><LastName>Balážová</LastName><Gender>Female</Gender><Age>37</Age><IdentificationNumber>456465/2534</IdentificationNumber><MonthSalary>1250.90</MonthSalary><HiredAt>10.1.2024</HiredAt></Employee>
+</Employees>

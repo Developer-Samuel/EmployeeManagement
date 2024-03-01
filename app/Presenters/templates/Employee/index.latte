@@ -1,0 +1,128 @@
+{block content}
+
+<div class="employees-content">
+        <div class="employees">
+            <div class="title">
+                <h1>Employees</h1>
+            </div>
+            <div class="actions">
+                <a id="graph-link" href="{link Employee:graph}">Graph</a>
+                <a id="add-link" href="{link Employee:add}">Add</a>
+            </div>
+            <div class="table-responsive border rounded">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-start">ID</th>
+                            <th class="text">Name</th>
+                            <th class="text">Gender</th>
+                            <th class="integer">Age</th>
+                            <th class="integer">identification number</th>
+                            <th class="decimal">Month salary</th>
+                            <th class="datetime">Hired at</th>
+                            <th class="without-action text-end">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {foreach $employees as $employee}
+                            <tr>
+                                <td class="text-start">
+                                    <span>
+                                        {$employee['id']}
+                                    </span>
+                                </td>
+                                <td>{$employee['fname'] . ' ' . $employee['lname'] }</td>
+                                <td>{$employee['gender'] }</td>
+                                <td>{$employee['age'] }</td>
+                                <td>{$employee['identification_number'] }</td>
+                                <td>{$employee['month_salary'] }</td>
+                                <td>{$employee['hired_at'] }</td>
+                                <td class="text-end">
+                                    <a id="edit-link" href="{link Employee:edit, id => $employee['id']}">
+                                        <span>Edit</span>
+                                    </a>
+                                    <a id="delete-link" n:href="delete!, id => $employee['id']" onclick="return confirm('Are you sure?')">
+                                        <span>Delete</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        {/foreach}
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+</div>
+
+<script src="https://cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
+
+<script>
+
+var textColumnIndex = $('.table thead th.text').index();
+var datetimeColumnIndex = $('.table thead th.datetime').index();
+
+var orderType = 'desc';
+
+var dataTable = $('.table').DataTable({
+    "ordering": true,
+    "columnDefs": [
+        {
+            "targets": 'without-action',
+            "orderable": false,
+            "className": "no-sort-icon" 
+        },
+        {
+            "targets": 'text',
+            "type": "string",
+            "orderable": true,
+        },
+        {
+            "targets": 'integer', 
+            "type": "integer",
+            "orderable": true,
+        },
+        {
+            "targets": 'datetime', 
+            "type": "date",
+            "orderable": true,
+        },
+        {
+          "targets": 'decimal', 
+          "type": "num-fmt", 
+          "render": function ( data, type, row ) {
+              if (type === 'display') {
+                  var value = parseFloat(data).toFixed(2);
+                  var parts = value.split(".");
+                  if (parts[1] === "00") {
+                      return parts[0] + ' €';
+                  } else {
+                      return parts.join(".") + ' €';
+                  }
+              }
+              return parseFloat(data).toFixed(2);
+          }
+      }
+
+    ],
+    "drawCallback": function(settings) {
+        if (this.api().page.info().pages <= 1) {
+            $('.dataTables_paginate', this.api().table().container()).hide();
+        } else {
+            $('.dataTables_paginate', this.api().table().container()).show();
+        }
+    
+        if (this.api().page.info().page === 0) {
+            $('.dataTables_paginate .paginate_button.previous', this.api().table().container()).hide();
+        } else {
+            $('.dataTables_paginate .paginate_button.previous', this.api().table().container()).show();
+        }
+        if (this.api().page.info().page === this.api().page.info().pages - 1) {
+            $('.dataTables_paginate .paginate_button.next', this.api().table().container()).hide();
+        } else {
+            $('.dataTables_paginate .paginate_button.next', this.api().table().container()).show();
+        }
+    },
+});
+
+</script>
+
+{/block}

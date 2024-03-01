@@ -1,0 +1,54 @@
+@import url('items/redirect-back.scss');
+
+@import url('pages/table.scss');
+@import url('pages/graph.scss');
+@import url('pages/form.scss');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+  
+    &::before, &::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI';
+    }
+}
+input, select 
+{
+    outline: 0 !important;
+}
+
+.text-start
+{
+    display: flex;
+    justify-content: flex-start;
+}
+.text-end
+{
+    display: flex;
+    justify-content: flex-end;
+}
+.flash
+{
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+.flash.success
+{
+    background: #00D440;
+    color: #000;
+}
+span.error
+{
+    background: #D8001D;
+    color: #fff;
+}
+ 

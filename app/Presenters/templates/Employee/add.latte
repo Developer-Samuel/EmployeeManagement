@@ -1,0 +1,49 @@
+{block content}
+<div class="employees-content">
+    <div class="redirect-back">
+        <a href="{link Employee:index}">
+            <img src="{$basePath}/icons/left-arrow.png">
+            <span>GO BACK</span> 
+        </a>
+    </div>
+    <div class="employees-form">
+        <div class="title">
+            <h1>ADD EMPLOYEE</h1>
+        </div>
+        {control employeeForm}
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    var form = $('#frm-employeeForm');
+    form.find('input[type="number"]').attr('step', '1');
+    var identificationInput = form.find('input[name="identification_number"]');
+    identificationInput.attr('maxlength', '11');
+
+    identificationInput.on('input', function() {
+        var val = $(this).val();
+        var newVal = val.replace(/\D/g, '');
+
+        if (newVal.length >= 6 && newVal.charAt(5) !== '/') {
+            newVal = newVal.slice(0, 6) + '/' + newVal.slice(6);
+        }
+
+        $(this).val(newVal);
+    });
+
+    var ageInput = form.find('input[name="age"]');
+    ageInput.attr('value', '18');
+    ageInput.attr('min', '18');
+    ageInput.attr('max', '65');
+
+    form.find('input[name="month_salary"]').attr('step', '0.01'); 
+    form.find('input[name="hired_at"]').attr('type', 'date'); 
+    form.find('select[name="gender"]').val('Male'); 
+});
+
+
+
+</script>
+
+{/block}

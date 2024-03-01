@@ -1,0 +1,282 @@
+/*!*************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./www/scss/items/redirect-back.scss ***!
+  \*************************************************************************************/
+.redirect-back {
+    margin: 30px;
+    a {
+        width: 160px;
+        background: #6c757d;
+        padding: 10px 15px;
+        border-radius: 7.5px;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            width: 20px;
+            height: 20px;
+            filter: invert(100%);
+        }
+        span {
+            position: relative;
+            right: 7.5px;
+            top: -1px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+}
+
+/*!*****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./www/scss/pages/table.scss ***!
+  \*****************************************************************************/
+.employees-content {
+    position: relative;
+    width: 100%;
+
+    .employees {
+        margin: 30px;
+
+        .title {
+            position: relative;
+            padding: 10px 0;
+
+            h1 {
+                position: relative;
+                text-align: center;
+                color: #000;
+                font-size: 36px;
+            }
+        }
+        .actions {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 30px;
+
+            a {
+                margin: 0 30px;
+                padding: 10px 40px;
+                border: 0;
+                border-radius: 12.5px;
+                font-size: 20px;
+                font-weight: 700;
+                color: #fff;
+                text-transform: uppercase;
+                text-decoration: none;
+
+                &#add-link {
+                    background: #007bff;
+                }
+                &#graph-link {
+                    background: #343a40;
+                }
+            }
+        }
+        .table-responsive {
+            position: relative;
+            margin: 50px 30px;
+
+            .dt-layout-row {
+                margin: 20px 0;
+                .dt-paging .dt-paging-button {
+                    border-radius: 7.5px;
+                    border: 2px solid #007bff;
+                    color: #000;
+                    font-weight: 700;
+                    transition: .5s;
+                    
+                    &.current {
+                        background: #007bff;
+                        color: #fff !important;
+                    }
+                    &:not(.current) {
+                        &:hover {
+                            background: #eee !important;
+                            color: #000 !important;
+                        }
+                    }
+                }
+            }
+            table {
+                position: relative;
+                justify-content: center;
+                border: 1px solid #bbb;
+                border-bottom: 0; 
+
+                thead 
+                {
+                    background: #000;
+                    color: #fff;
+
+                    th {
+                        border-bottom: 1px solid #bbb;   
+                        padding: 15px;
+                    }
+                }
+                tbody {
+                    td {
+                        padding: 20px 15px;
+                        &:nth-child(1) span {
+                            position: relative;
+                            top: -3.5px;
+                        }
+                        a {
+                            padding: 8px 15px 0 15px;
+                            font-size: 15px;
+                            border-radius: 7.5px;
+                            text-decoration: none;
+                            color: #fff;
+
+                            &#edit-link {
+                                margin-right: 7.5px;
+                                background: #007bff;
+                            }
+                            &#delete-link {
+                                background: #dc3545;
+                            }
+
+                            span {
+                                position: relative;
+                                top: -4.5px;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }   
+}
+
+/*!*****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./www/scss/pages/graph.scss ***!
+  \*****************************************************************************/
+
+.employees-content {
+    position: relative;
+    width: 100%;
+    .graph {
+        margin: 100px 0;
+        padding: 0 50px;
+    }
+}
+/*!****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./www/scss/pages/form.scss ***!
+  \****************************************************************************/
+.employees-content {
+    position: relative;
+    width: 100%;
+    .employees-form {
+        position: relative;
+        padding: 0 30px;
+        .title {
+            position: relative;
+            width: 100%;
+            h1 {
+                width: 100%;
+                text-align: center;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        }
+        form {
+            position: relative;
+            height: calc(100vh - 210px);
+            margin: 30px 0;
+            background: #007bff;
+            border-radius: 30px;
+
+            table {
+                position: relative;
+                transform: translate(-50%,-50%);
+                left: 45%;
+                top: 50%;
+                width: 600px;
+
+                tr {
+                    th {
+                        padding: 10px 0;
+                        color: #fff;
+                        text-align: right;
+                    }
+                    td {
+                        position: relative;
+                        padding-left: 30px;
+
+                        input:not([type=submit]), select {
+                            position: relative;
+                            width: 100%;
+                            height: 30px;
+                            padding: 0 5px;
+                            border: 0;
+                            border-radius: 7.5px;
+                        }
+                        input[type=submit] {
+                            width: 100%;
+                            margin-top: 30px;
+                            padding: 10px 0;
+                            background: #000;
+                            color: #fff;
+                            font-weight: 700;
+                            border-radius: 7.5px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./www/scss/app.scss ***!
+  \************************************************************************************************************/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI";
+}
+*::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI";
+}
+
+input, select {
+  outline: 0 !important;
+}
+
+.text-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.text-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flash {
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.flash.success {
+  background: #00D440;
+  color: #000;
+}
+
+span.error {
+  background: #D8001D;
+  color: #fff;
+}
